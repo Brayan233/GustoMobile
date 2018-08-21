@@ -1,0 +1,7 @@
+{
+  "name": "GustoMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
