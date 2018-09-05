@@ -1,3 +1,417 @@
 page-home {
-
-}
+    /*/////// STYLE GLOBAL /////////
+    ::::::::::::::::::::::::::::::*/
+    
+    p, h1, h2, h3, h4, h5, h6, li, span {
+        font-size: 16px;
+      }
+      
+      a, p, li, span, div, input {
+        font-family: "Lato";
+        font-weight: 300;
+        color: #000;
+        line-height: 21px;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Dosis";
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #331b0e;
+      }
+      
+      ul {
+        padding-left: 0;
+      }
+      
+      h1 {
+        font-size: 1.5em;
+      }
+      
+      h2 {
+        font-size: 1.3em;
+      }
+      
+      p {
+        font-size: 0.9em;
+      }
+      
+      a {
+        color: #c36e36;
+        &:hover {
+          font-family: "Lato";
+          font-weight: 700;
+          text-decoration: none;
+          color: #c36e36;
+        }
+      }
+      
+      .isActive {
+        font-family: "Lato";
+        font-weight: 700;
+        text-decoration: none;
+        color: #c36e36;
+      }
+      
+      nav ul li a {
+        font-size: 1em;
+        color: #000;
+      }
+      
+      .texteBlanc {
+        color: #fff;
+      }
+      
+      .bg-light {
+        background-color: #fff !important;
+      }
+      
+      /*/////// MESSAGE ERROR //////////
+      ::::::::::::::::::::::::::::::::*/
+      
+      .message {
+        padding: 1em;
+        vertical-align: middle;
+        margin: 1em 0;
+        p {
+          margin-bottom: 0;
+        }
+      }
+      
+      .error_msg {
+        background-color: #D7163E;
+        p {
+          color: #fff;
+        }
+      }
+      
+      .validate_msg {
+        background-color: #99ff81;
+      }
+      
+      /*/////// STYLE INPUT //////////
+      ::::::::::::::::::::::::::::::*/
+      
+      label {
+        font-family: "Lato";
+        font-weight: 300;
+        color: #331b0e;
+        display: block;
+        font-size: 0.9em;
+        margin-bottom: 0;
+      }
+      
+      .inputResa, select {
+        text-align: center;
+        border: 1px solid #331b0e;
+        color: #331b0e;
+        border: 1px solid #331b0e;
+        width: 200px;
+        height: 35px;
+      }
+      
+      .inputResa:focus {
+        border: none;
+        outline: none;
+      }
+      
+      .bouton {
+        color: #331b0e;
+        border: 1px solid #331b0e;
+        display: inline-block;
+        width: 200px;
+        padding: 10px 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+        &:hover {
+          background-color: #331b0e;
+          color: #c36e36;
+        }
+      }
+      
+      /*////////// NAVIGATION //////////////
+      ::::::::::::::::::::::::::::::::::::*/
+      
+      .container_logo_nav {
+        float: left;
+      }
+      
+      nav img {
+        width: 100px;
+        height: auto;
+      }
+      
+      .navbar-light {
+        .navbar-nav .nav-link {
+          color: #000;
+          &:focus, &:hover {
+            color: #c36e36;
+          }
+        }
+        .navbar-text a {
+          color: #fff;
+          background-color: #c36e36;
+          &:hover {
+            color: #c36e36;
+            background-color: #331b0e;
+            font-family: 'Lato';
+            font-weight: 300;
+          }
+        }
+      }
+      
+      /*///////////// RESERVATION /////////////////
+      ::::::::::::::::::::::::::::::::::::::::::*/
+      
+      #bloc-reservation {
+        background-image: url(../img/home/presentation.jpg);
+        height: auto;
+        .input-reservation {
+          background-color: #c36e36;
+          padding: 1em;
+        }
+        section {
+          margin-bottom: 1em;
+        }
+        .prix-reservation {
+          border: 1px solid #331b0e;
+          padding: 1em;
+          margin-bottom: 1em;
+        }
+        #date-reservation {
+          border: 1px solid #331b0e;
+          width: 200px;
+          height: 35px;
+          padding: 0.5em;
+        }
+        #presentation {
+          padding: 1em 0;
+          margin-top: 10%;
+          h2, h3, p {
+            color: #fff;
+          }
+        }
+      }
+      
+      .puce {
+        vertical-align: middle;
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-color: #000;
+          border-radius: 30px;
+          vertical-align: middle;
+          margin-right: 0.5em;
+        }
+      }
+      
+      .puce-rouge:before {
+        background-color: #D7163E;
+      }
+      
+      .puce-verte:before {
+        background-color: #AAD0A1;
+      }
+      
+      .puce-grise:before {
+        background-color: #DDDDDD;
+      }
+      
+      .reserver {
+        margin: 0 auto;
+      }
+      
+      .label-reunion, #salle-reunion, .label-service, .input-service {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+      .label-reunion {
+        margin-left: 0.5em;
+      }
+      
+      #service {
+        margin-top: 1em;
+      }
+      
+      .label-service {
+        margin-left: 10px;
+      }
+      
+      /*/////////////// EVENTS /////////////
+      ::::::::::::::::::::::::::::::::::::*/
+      
+      .border-events {
+        margin: 0 -12px;
+      }
+      
+      /*////////// PAGE GLOBAL /////////////
+      ::::::::::::::::::::::::::::::::::::*/
+      
+      .description_page {
+        background-color: #c36e36;
+        padding: 2em 0;
+        p {
+          color: #fff;
+        }
+      }
+      
+      .texte_description {
+        p, h3 {
+          text-align: center;
+        }
+      }
+      
+      /*////////// PAGE SALLE  /////////////
+      ::::::::::::::::::::::::::::::::::::*/
+      
+      .img_salle {
+        height: 300px;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      /*//////////////PAGE CONNEXION /////////////
+      ::::::::::::::::::::::::::::::::::::::::::*/
+      
+      .label-connexion {
+        display: block;
+      }
+      
+      .input-connexion {
+        display: block;
+        width: 100%;
+      }
+      
+      .bouton-connexion {
+        display: block;
+        margin: 0 auto;
+      }
+      
+      .border-connexion {
+        height: 600px;
+      }
+      
+      /*//////////////PAGE CONTACT /////////////
+      ::::::::::::::::::::::::::::::::::::::::::*/
+      
+      #contact-info {
+        background-color: #331b0e;
+        p, h3, h2 {
+          color: #fff;
+        }
+      }
+      
+      /*////////// NEWSLETTER //////////////////
+      :::::::::::::::::::::::::::::::::::::::*/
+      
+      .img_social_media {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+      }
+      
+      .newsletter_footer {
+        background-color: #c36e36;
+        padding: 2em 0;
+        input {
+          width: 70%;
+          padding: 5px 0;
+          vertical-align: middle;
+          border: none;
+        }
+        .bouton {
+          display: inline-block;
+          width: 30%;
+          background-color: #331b0e;
+          color: #c36e36;
+          &:hover {
+            background-color: #000;
+            color: #fff;
+          }
+        }
+      }
+      
+      .bloc_social_media {
+        margin-top: 2em;
+      }
+      
+      /*///////////// FAQ  //////////////////
+      :::::::::::::::::::::::::::::::::::::::*/
+      
+      .question, .reponse {
+        width: 50%;
+        margin: 0 auto;
+      }
+      
+      .question {
+        background-color: #c36e36;
+        color: #000;
+        margin-top: 1em;
+        cursor: pointer;
+      }
+      
+      .numero_faq {
+        color: #fff;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        margin-left: -1.5em;
+      }
+      
+      .question p {
+        display: inline-block;
+        margin-left: 1em;
+        width: 90%;
+        &:after {
+          content: " ";
+          width: 20px;
+          height: 20px;
+          background-image: url(../img/icones/down.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          display: inline-block;
+          vertical-align: middle;
+          float: right;
+        }
+      }
+      
+      .reponse {
+        border: 1px solid #000;
+        border-top: none;
+        padding: 2em;
+        margin-bottom: 10px;
+      }
+      
+      /*///////////// FOOTER //////////////////
+      :::::::::::::::::::::::::::::::::::::::*/
+      
+      footer {
+        background-color: #331b0e;
+        padding: 1em;
+        .logo_footer {
+          width: 150px;
+        }
+        h4, ul li {
+          color: #c36e36;
+        }
+        p {
+          color: #fff;
+          font-size: 0.8em;
+        }
+        ul li {
+          list-style: none;
+          font-size: 0.8em;
+        }
+      }
+      
+      .copyright {
+        font-size: 0.7em;
+      }
+    }
+    

@@ -1,18 +1,406 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+
+
+
+  
+  
+    <!-- BLOC RESERVATION --> 
+    <div class="bloc" id="bloc-reservation">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-12 input-reservation text-center">
+            <h2>Besoin d'une réservation ?</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem fugiat, nisi pariatur voluptas, quam maiores distinctio sunt debitis eos dolorem voluptate et dolores, cum rerum accusamus quos facere ducimus nihil.
+            </p>
+            <ion-list>
+
+                <ion-item>
+                  <ion-label floating>Username</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-label floating>Password</ion-label>
+                  <ion-input type="password"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Date de réservation</ion-label>
+                    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Heure d'arrivée</ion-label>
+                    <ion-datetime displayFormat="HH" [(ngModel)]="hour_reservation">h</ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>je choiss ma salle</ion-label>
+                    <ion-select [(ngModel)]="salle">
+                      <ion-option value="open-space">Open Space (120 places)</ion-option>
+                      <ion-option value="salle-reu">Salle de réunion</ion-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-card>
+
+                    <ion-card-header>
+                      PRIX
+                    </ion-card-header>
+                  
+                    <ion-card-content>
+                        10<ion-icon name="logo-euro"></ion-icon>
+                      </ion-card-content>
+                  
+                  </ion-card>
+                  <button ion-button full>Je réserve</button>
+
+              </ion-list>
+           <!--  <form action="">
+              <section>
+                <label for="date-reservation">Date de réservation</label>
+                <input type="date" name="date-reservation" id="date-reservation">
+              </section>
+              <section>
+                <label for="arrive-reservation">Heure d'arrivée</label>
+                <select name="arrive-reservation" id="arrive-reservation">
+                  <option value="7h00">7h00</option>
+                  <option value="8h00">8h00</option>
+                  <option value="9h00">9h00</option>
+                  <option value="10h00">10h00</option>
+                  <option value="11h00">11h00</option>
+                </select>
+              </section>
+              <section>
+                <label for="heure-reservation">Nombre d'heures réservées</label>
+                <select name="heure-reservation" id="heure-reservation">
+                  <option value="1h">1h</option>
+                  <option value="2h">2h</option>
+                  <option value="3h">3h</option>
+                </select>
+              </section>
+              <section>
+                <label for="salle-reservation">Je choisis ma salle</label>
+                <select name="salle-reservation" id="salle-reservation">
+                  <option value="open-space">Open Space (120 places)</option>
+                  <option value="salle-reu">Salle de réunion</option>
+                </select>
+              </section>
+              <div class="col-lg-6 offset-lg-3 col-4 offset-4 prix-reservation"><strong>Prix: 10€</strong></div>
+              <input type="submit" class="bouton" value="Je réserve">
+            </form> -->
+          </div>
+          <div class="col-lg-8 d-none d-lg-block col-md-12" id="presentation">
+            <div class="row">
+              <div class="col-lg-8 offset-lg-2 mb-lg-2 text-center">
+                <h2>Bienvenue chez Gusto Coffee !</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas aliquid voluptate quas nobis ex in delectus, eum, odio repudiandae eius velit vitae pariatur iusto ipsam tempore saepe sapiente ab harum.</p>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- BLOC OPEN SPACE --> 
+    <div class="container mt-3 mb-5">
+      <div class="row">
+        <div class="col-lg-12 text-center text-md-left">
+          <h2>Veuillez sélectionner votre place assise</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis numquam aperiam perferendis eaque harum iste accusamus? Cum inventore, laudantium eius tempore facere est quibusdam. Sint similique voluptates nihil dolor, aperiam.</p>
+        </div>
+      </div>
+      <div class="row mt-3 align-items-center text-center text-md-left">
+        <div class="col-lg-3 puce puce-rouge">
+          Place disponible
+        </div>
+      </div>
+      <div class="row mt-3 align-items-center text-center text-md-left">
+        <div class="col-lg-3 puce puce-verte">
+          Place déja réservée
+        </div>
+      </div>
+      <div class="row mt-3 align-items-center text-center text-md-left">
+        <div class="col-lg-3 puce puce-grise">
+          Place non disponible
+        </div>
+      </div>
+      <div class="row mt-2 mb-2">
+        <div class="col-lg-12">
+          <img src="assets/imgs/home/map.png" alt="plan salle open space" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <!-- FIN BLOC OPEN SPACE --> 
+    <!-- BLOC SALLE REUNION --> 
+    <div class="container">
+      <div class="row">
+  
+  
+        <div class="col-lg-12 text-center text-md-left">
+          <h2>Veuillez sélectionner votre salle de réunion</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis numquam aperiam perferendis eaque harum iste accusamus? Cum inventore, laudantium eius tempore facere est quibusdam. Sint similique voluptates nihil dolor, aperiam.</p>
+        </div>
+      </div>
+      
+      <ion-card>
+          <img src="assets/imgs/images/salle_reunion.jpg"/>
+          <ion-card-content>
+            <ion-card-title>
+              Nine Inch Nails Live
+              </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+            <ion-item>
+                <ion-label>Réservez</ion-label>
+                <ion-checkbox color="green"></ion-checkbox>
+              </ion-item>
+          </ion-card-content>
+        </ion-card>
+  
+        <ion-card>
+            <img src="assets/imgs/images/salle_reunion_2.jpg"/>
+            <ion-card-content>
+              <ion-card-title>
+                Nine Inch Nails Live
+                </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+              </p>
+              <ion-item>
+                  <ion-label>Réservez</ion-label>
+                  <ion-checkbox color="green"></ion-checkbox>
+                </ion-item>
+            </ion-card-content>
+          </ion-card>
+  
+  
+          <ion-card>
+              <img src="assets/imgs/images/salle_reunion_3.jpg"/>
+              <ion-card-content>
+                <ion-card-title>
+                  Nine Inch Nails Live
+                  </ion-card-title>
+                <p>
+                  The most popular industrial group ever, and largely
+                  responsible for bringing the music to a mass audience.
+                </p>
+                <ion-item>
+                    <ion-label>Réservez</ion-label>
+                    <ion-checkbox color="green"></ion-checkbox>
+                  </ion-item>
+              </ion-card-content>
+            </ion-card>
+  
+  
+            <ion-card>
+                <img src="assets/imgs/images/salle_reunion_4.jpg"/>
+                <ion-card-content>
+                  <ion-card-title>
+                    Nine Inch Nails Live
+                    </ion-card-title>
+                  <p>
+                    The most popular industrial group ever, and largely
+                    responsible for bringing the music to a mass audience.
+                  </p>
+                  <ion-item>
+                      <ion-label>Réservez</ion-label>
+                      <ion-checkbox color="green"></ion-checkbox>
+                    </ion-item>
+                </ion-card-content>
+              </ion-card>
+  
+  
+              <ion-card>
+                  <img src="assets/imgs/images/openspace_1.jpg"/>
+                  <ion-card-content>
+                    <ion-card-title>
+                      Nine Inch Nails Live
+                      </ion-card-title>
+                    <p>
+                      The most popular industrial group ever, and largely
+                      responsible for bringing the music to a mass audience.
+                    </p>
+                    <ion-item>
+                        <ion-label>Réservez</ion-label>
+                        <ion-checkbox color="green"></ion-checkbox>
+                      </ion-item>
+                  </ion-card-content>
+                </ion-card>
+  
+                <ion-card>
+                    <img src="assets/imgs/images/openspace_2.jpg"/>
+                    <ion-card-content>
+                      <ion-card-title>
+                        Nine Inch Nails Live
+                        </ion-card-title>
+                      <p>
+                        The most popular industrial group ever, and largely
+                        responsible for bringing the music to a mass audience.
+                      </p>
+                      <ion-item>
+                          <ion-label>Réservez</ion-label>
+                          <ion-checkbox color="green"></ion-checkbox>
+                        </ion-item>
+                    </ion-card-content>
+                  </ion-card>
+  
+                  <ion-card>
+                      <img src="assets/imgs/images/openspace_3.jpg"/>
+                      <ion-card-content>
+                        <ion-card-title>
+                          Nine Inch Nails Live
+                          </ion-card-title>
+                        <p>
+                          The most popular industrial group ever, and largely
+                          responsible for bringing the music to a mass audience.
+                        </p>
+                        <ion-item>
+                            <ion-label>Réservez</ion-label>
+                            <ion-checkbox color="green"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                    </ion-card>
+  
+                    <ion-card>
+                        <img src="assets/imgs/images/bar_3.jpg"/>
+                        <ion-card-content>
+                          <ion-card-title>
+                            Nine Inch Nails Live
+                            </ion-card-title>
+                          <p>
+                            The most popular industrial group ever, and largely
+                            responsible for bringing the music to a mass audience.
+                          </p>
+                          <ion-item>
+                              <ion-label>Réservez</ion-label>
+                              <ion-checkbox color="green"></ion-checkbox>
+                            </ion-item>
+                        </ion-card-content>
+                      </ion-card>
+  
+    
+      </div>
+    <!-- FIN BLOC SALLE REUNION --> 
+  
+      <!-- BLOC SERVICES --> 
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-12 text-center text-md-left">
+          <h2>Souhaitez-vous bénéficier de nos services en plus ?</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis numquam aperiam perferendis eaque harum iste accusamus? Cum inventore, laudantium eius tempore facere est quibusdam. Sint similique voluptates nihil dolor, aperiam.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 mb-3">
+
+          <ion-list>
+              <ion-item>
+                <ion-label>Restauration</ion-label>
+                <ion-select multiple="true" [(ngModel)]="restauration">
+                  <ion-option value="petitdej">Petit Déjeuner (4€)</ion-option>
+                  <ion-option value="dej">Déjeuner</ion-option>
+                  <ion-option value="diner">Dîner</ion-option>
+                  <ion-option value="non">Non merci je ne veux rien</ion-option>
+
+                </ion-select>
+              </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item>
+                  <ion-label>Service informatique</ion-label>
+                  <ion-select multiple="true" [(ngModel)]="restauration">
+                    <ion-option value="petitdej">Impression</ion-option>
+                    <ion-option value="dej">Clé USB</ion-option>
+                    <ion-option value="diner">Espace de stockage</ion-option>
+                    <ion-option value="non">Non merci je ne veux rien</ion-option>
+  
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+        </div>
+
+      </div>
+      <div class="row no-gutters mt-2">
+        <div class="col-lg-12">
+          <button ion-button outline>Confirmer la réservation</button>
+
+        </div>
+      </div>
+    </div>
+    <!-- FIN BLOC SERVICES --> 
+  
+    <!-- BLOC EVENEMENTS --> 
+    <div class="container mt-5">
+      <h2 class="text-center">Événements à venir</h2>
+      <div class="row">
+
+        <ion-card>
+            <img src="assets/imgs/home/image1-event.jpg" alt="image événement" class="img-fluid">
+            <ion-card-content>
+              <ion-card-title>
+                Nine Inch Nails Live
+                </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+              </p>
+                  <button ion-button full>Voir l'événement</button>
+            </ion-card-content>
+          </ion-card>
+
+
+        <ion-card>
+            <img src="assets/imgs/home/image2-event.jpg" alt="image événement" class="img-fluid">
+            <ion-card-content>
+              <ion-card-title>
+                Nine Inch Nails Live
+                </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+              </p>
+                  <button ion-button full>Voir l'événement</button>
+            </ion-card-content>
+          </ion-card>
+
+
+
+        <ion-card>
+            <img src="assets/imgs/home/image3-event.jpg" alt="image événement" class="img-fluid">
+            <ion-card-content>
+              <ion-card-title>
+                Nine Inch Nails Live
+                </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+              </p>
+                  <button ion-button full>Voir l'événement</button>
+            </ion-card-content>
+          </ion-card>
+
+
+
+      </div>
+    </div>
+    
+  
+  </ion-content>
+  
